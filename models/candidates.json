@@ -1,0 +1,75 @@
+{
+  "discovered_at": "2026-07-15",
+  "candidates": [
+    {
+      "model_id": "OpenGVLab/InternVL3-1B-hf",
+      "model_url": "https://huggingface.co/OpenGVLab/InternVL3-1B-hf",
+      "category_guess": "vlm",
+      "parameters_total_b": 0.938,
+      "license": "other",
+      "pipeline_tag": "image-text-to-text",
+      "downloads": 272363,
+      "likes": 10,
+      "official_namespace": "OpenGVLab",
+      "tags": [
+        "arxiv:2312.14238",
+        "arxiv:2404.16821",
+        "arxiv:2411.10442",
+        "arxiv:2412.05271",
+        "arxiv:2504.10479",
+        "base_model:OpenGVLab/InternVL3-1B-Instruct",
+        "base_model:finetune:OpenGVLab/InternVL3-1B-Instruct",
+        "conversational",
+        "dataset:OpenGVLab/MMPR-v1.2",
+        "endpoints_compatible",
+        "image-text-to-text",
+        "internvl",
+        "license:other",
+        "multilingual",
+        "region:us"
+      ],
+      "discovered_at": "2026-07-15",
+      "review_status": "needs-review",
+      "reasons": [
+        "parameter count is inferred from public safetensors metadata",
+        "license and original-developer provenance require human review",
+        "candidate has not been promoted to the verified registry"
+      ]
+    },
+    {
+      "model_id": "OpenGVLab/InternVL3-8B-hf",
+      "model_url": "https://huggingface.co/OpenGVLab/InternVL3-8B-hf",
+      "category_guess": "vlm",
+      "parameters_total_b": 7.944,
+      "license": "other",
+      "pipeline_tag": "image-text-to-text",
+      "downloads": 59329,
+      "likes": 9,
+      "official_namespace": "OpenGVLab",
+      "tags": [
+        "arxiv:2312.14238",
+        "arxiv:2404.16821",
+        "arxiv:2411.10442",
+        "arxiv:2412.05271",
+        "arxiv:2504.10479",
+        "base_model:OpenGVLab/InternVL3-8B-Instruct",
+        "base_model:finetune:OpenGVLab/InternVL3-8B-Instruct",
+        "conversational",
+        "dataset:OpenGVLab/MMPR-v1.2",
+        "endpoints_compatible",
+        "image-text-to-text",
+        "internvl",
+        "license:other",
+        "multilingual",
+        "region:us"
+      ],
+      "discovered_at": "2026-07-15",
+      "review_status": "needs-review",
+      "reasons": [
+        "parameter count is inferred from public safetensors metadata",
+        "license and original-developer provenance require human review",
+        "candidate has not been promoted to the verified registry"
+      ]
+    }
+  ]
+}

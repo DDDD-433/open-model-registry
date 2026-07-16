@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/open-model-registry/model.schema.json",
+  "title": "Open Model Registry",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "models"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "generated_at": {"type": "string", "format": "date"},
+    "models": {"type": "array", "items": {"$ref": "#/$defs/model"}}
+  },
+  "$defs": {
+    "model": {
+      "type": "object",
+      "required": ["model_id", "name", "family", "developer", "category", "modalities", "parameters", "variant", "openness", "deployment", "official_checkpoint", "sources"],
+      "properties": {
+        "model_id": {"type": "string", "minLength": 3},
+        "name": {"type": "string", "minLength": 1},
+        "family": {"type": "string", "minLength": 1},
+        "developer": {"type": "string", "minLength": 1},
+        "category": {"enum": ["llm", "vlm", "ocr-vision", "coding", "audio", "embedding", "other"]},
+        "release_date": {"type": ["string", "null"], "format": "date"},
+        "modalities": {
+          "type": "object",
+          "required": ["inputs", "outputs"],
+          "properties": {"inputs": {"type": "array", "items": {"type": "string"}}, "outputs": {"type": "array", "items": {"type": "string"}}}
+        },
+        "parameters": {
+          "type": "object",
+          "required": ["total_b", "active_b", "architecture"],
+          "properties": {
+            "total_b": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 12},
+            "active_b": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "architecture": {"type": "string"}
+          }
+        },
+        "variant": {"type": "string"},
+        "context_length": {"type": ["integer", "null"], "minimum": 1},
+        "openness": {
+          "type": "object",
+          "required": ["license", "commercial_use", "weights_available", "inference_code_available", "training_code_available", "training_data_disclosed", "grade"],
+          "properties": {
+            "license": {"type": "string", "minLength": 1},
+            "commercial_use": {"type": "boolean"},
+            "weights_available": {"type": "boolean"},
+            "inference_code_available": {"type": "boolean"},
+            "training_code_available": {"type": "boolean"},
+            "training_data_disclosed": {"enum": ["none", "limited", "partial", "substantial", "unknown"]},
+            "grade": {"enum": ["A", "B", "C", "D", "U"]}
+          }
+        },
+        "deployment": {"type": "object", "additionalProperties": {"type": "boolean"}},
+        "official_checkpoint": {"type": "boolean"},
+        "last_verified": {"type": ["string", "null"], "format": "date"},
+        "sources": {"type": "array", "minItems": 1, "items": {"type": "string", "format": "uri"}},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

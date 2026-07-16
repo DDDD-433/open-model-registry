@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/open-model-registry/deployment-variant.schema.json",
+  "title": "Open Model Registry Deployment Variant",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "target_ram_gb", "variants"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "generated_at": {"type": "string", "format": "date"},
+    "target_ram_gb": {"const": 16},
+    "variants": {"type": "array", "items": {"$ref": "#/$defs/variant"}}
+  },
+  "$defs": {
+    "variant": {
+      "type": "object",
+      "required": ["variant_id", "family", "category", "total_parameters_b", "format", "memory_estimate_gb", "fit_status", "license", "license_status", "official_checkpoint", "runtime_support", "source_url", "last_verified"],
+      "properties": {
+        "variant_id": {"type": "string", "minLength": 3},
+        "family": {"type": "string", "minLength": 1},
+        "source_model_id": {"type": ["string", "null"]},
+        "category": {"enum": ["llm", "vlm", "ocr-vision", "coding", "audio", "image-generation", "other"]},
+        "parameter_scope": {"enum": ["in-scope", "edge-exception"]},
+        "total_parameters_b": {"type": "number", "exclusiveMinimum": 0},
+        "format": {"type": "string", "minLength": 1},
+        "bits_per_weight": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "memory_estimate_gb": {"type": ["number", "null"], "minimum": 0},
+        "memory_estimate_basis": {"type": "string"},
+        "fit_status": {"enum": ["yes", "borderline", "no", "unknown"]},
+        "license": {"type": "string", "minLength": 1},
+        "license_status": {"enum": ["verified", "needs-card-review", "unknown"]},
+        "official_checkpoint": {"type": "boolean"},
+        "runtime_support": {"type": "array", "items": {"type": "string"}},
+        "source_url": {"type": "string", "format": "uri"},
+        "last_verified": {"type": "string", "format": "date"},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}
