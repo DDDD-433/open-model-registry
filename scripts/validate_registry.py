@@ -13,6 +13,7 @@ from registry import load_registry
 
 VALID_CATEGORIES = {"llm", "vlm", "ocr-vision", "coding", "audio", "embedding", "other"}
 VALID_GRADES = {"A", "B", "C", "D", "U"}
+VALID_EVIDENCE_TYPES = {"model_card", "safetensors_metadata", "release_announcement", "repository", "paper", "runtime_test"}
 
 
 def validate(data: dict) -> list[str]:
@@ -40,8 +41,11 @@ def validate(data: dict) -> list[str]:
             errors.append(f"{prefix}.category is invalid: {category!r}")
         parameters = model.get("parameters", {})
         total_b = parameters.get("total_b") if isinstance(parameters, dict) else None
-        if not isinstance(total_b, (int, float)) or not 0 < total_b < 12:
-            errors.append(f"{prefix}.parameters.total_b must be between 0 and 12")
+        if not isinstance(total_b, (int, float)) or not 0 < total_b <= 12:
+            errors.append(f"{prefix}.parameters.total_b must be between 0 and 12 inclusive")
+        effective_b = parameters.get("effective_b") if isinstance(parameters, dict) else None
+        if effective_b is not None and (not isinstance(effective_b, (int, float)) or not isinstance(total_b, (int, float)) or not 0 < effective_b <= total_b):
+            errors.append(f"{prefix}.parameters.effective_b must be positive and no greater than total_b")
 
         openness = model.get("openness", {})
         if not isinstance(openness, dict) or openness.get("grade") not in VALID_GRADES:
@@ -58,6 +62,24 @@ def validate(data: dict) -> list[str]:
 
         if model.get("official_checkpoint") is not True:
             errors.append(f"{prefix}.official_checkpoint must be true for the primary catalog")
+
+        evidence = model.get("evidence")
+        if evidence is not None:
+            if not isinstance(evidence, dict):
+                errors.append(f"{prefix}.evidence must be an object")
+            else:
+                for field, item in evidence.items():
+                    evidence_prefix = f"{prefix}.evidence.{field}"
+                    if not isinstance(item, dict):
+                        errors.append(f"{evidence_prefix} must be an object")
+                        continue
+                    if item.get("type") not in VALID_EVIDENCE_TYPES:
+                        errors.append(f"{evidence_prefix}.type is invalid")
+                    parsed = urlparse(item.get("url", ""))
+                    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+                        errors.append(f"{evidence_prefix}.url must be an HTTP(S) URL")
+                    if not isinstance(item.get("supports"), list) or not item["supports"]:
+                        errors.append(f"{evidence_prefix}.supports must be a non-empty list")
 
         last_verified = model.get("last_verified")
         if last_verified is not None:

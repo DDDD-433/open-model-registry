@@ -11,6 +11,14 @@ class DiscoveryTests(unittest.TestCase):
     def test_parameter_count_uses_largest_weight_metadata_value(self):
         self.assertEqual(parameter_count_billions({"safetensors": {"parameters": {"BF16": 2_000_000_000}}}), 2.0)
 
+    def test_parameter_count_prefers_total_metadata_for_mixed_models(self):
+        self.assertEqual(
+            parameter_count_billions(
+                {"safetensors": {"parameters": {"BF16": 3_000_000_000}, "total": 4_250_000_000}}
+            ),
+            4.25,
+        )
+
     def test_quantized_derivatives_are_excluded(self):
         self.assertTrue(is_derivative({"modelId": "example/model-GGUF", "tags": []}))
 

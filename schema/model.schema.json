@@ -29,8 +29,9 @@
           "type": "object",
           "required": ["total_b", "active_b", "architecture"],
           "properties": {
-            "total_b": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 12},
+            "total_b": {"type": "number", "exclusiveMinimum": 0, "maximum": 12},
             "active_b": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "effective_b": {"type": ["number", "null"], "exclusiveMinimum": 0},
             "architecture": {"type": "string"}
           }
         },
@@ -41,7 +42,7 @@
           "required": ["license", "commercial_use", "weights_available", "inference_code_available", "training_code_available", "training_data_disclosed", "grade"],
           "properties": {
             "license": {"type": "string", "minLength": 1},
-            "commercial_use": {"type": "boolean"},
+            "commercial_use": {"type": ["boolean", "string"]},
             "weights_available": {"type": "boolean"},
             "inference_code_available": {"type": "boolean"},
             "training_code_available": {"type": "boolean"},
@@ -53,7 +54,28 @@
         "official_checkpoint": {"type": "boolean"},
         "last_verified": {"type": ["string", "null"], "format": "date"},
         "sources": {"type": "array", "minItems": 1, "items": {"type": "string", "format": "uri"}},
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "parameters": {"$ref": "#/$defs/evidence_item"},
+            "license": {"$ref": "#/$defs/evidence_item"},
+            "release_date": {"$ref": "#/$defs/evidence_item"},
+            "architecture": {"$ref": "#/$defs/evidence_item"},
+            "modalities": {"$ref": "#/$defs/evidence_item"},
+            "deployment": {"$ref": "#/$defs/evidence_item"}
+          }
+        },
         "notes": {"type": "string"}
+      }
+    },
+    "evidence_item": {
+      "type": "object",
+      "required": ["type", "url", "supports"],
+      "properties": {
+        "type": {"enum": ["model_card", "safetensors_metadata", "release_announcement", "repository", "paper", "runtime_test"]},
+        "url": {"type": "string", "format": "uri"},
+        "revision": {"type": ["string", "null"]},
+        "supports": {"type": "array", "minItems": 1, "items": {"type": "string"}}
       }
     }
   }

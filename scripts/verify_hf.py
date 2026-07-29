@@ -22,7 +22,11 @@ def fetch(model_id: str, timeout: float = 10.0) -> dict:
 
 
 def live_parameters(model: dict) -> float | None:
-    values = ((model.get("safetensors") or {}).get("parameters") or {}).values()
+    safetensors = model.get("safetensors") or {}
+    total = safetensors.get("total")
+    if isinstance(total, (int, float)):
+        return total / 1_000_000_000
+    values = (safetensors.get("parameters") or {}).values()
     numeric = [value for value in values if isinstance(value, (int, float))]
     return max(numeric) / 1_000_000_000 if numeric else None
 
@@ -62,8 +66,8 @@ def verify_registry(
                 errors.append(f"{model_id}: unavailable ({failure})")
                 continue
             params = live_parameters(live)
-            if params is not None and params >= 12:
-                errors.append(f"{model_id}: live total is {params:.3f}B, outside <12B")
+            if params is not None and params > 12:
+                errors.append(f"{model_id}: live total is {params:.3f}B, outside <=12B")
             expected = record["parameters"]["total_b"]
             if params is not None and abs(params - expected) > tolerance:
                 errors.append(f"{model_id}: recorded {expected:g}B, live metadata {params:.3f}B")

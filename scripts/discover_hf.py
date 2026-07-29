@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Discover possible official sub-12B models from the public Hugging Face API.
+"""Discover possible official <=12B models from the public Hugging Face API.
 
 Discovery is intentionally advisory: output goes to a candidate file and never
 mutates the verified registry. A maintainer must review the model card, license,
@@ -52,7 +52,11 @@ def fetch_model_details(model_id: str) -> dict[str, Any]:
 
 
 def parameter_count_billions(model: dict[str, Any]) -> float | None:
-    parameters = (model.get("safetensors") or {}).get("parameters")
+    safetensors = model.get("safetensors") or {}
+    total = safetensors.get("total")
+    if isinstance(total, (int, float)):
+        return round(total / 1_000_000_000, 3)
+    parameters = safetensors.get("parameters")
     if not isinstance(parameters, dict) or not parameters:
         return None
     numeric = [value for value in parameters.values() if isinstance(value, (int, float))]
@@ -120,7 +124,7 @@ def discover(queries: list[str], limit: int, existing_ids: set[str] | None = Non
                 continue
             params_b = parameter_count_billions(details)
             pipeline = details.get("pipeline_tag") or model.get("pipeline_tag")
-            if params_b is None or params_b >= 12 or pipeline not in MODEL_PIPELINES:
+            if params_b is None or params_b > 12 or pipeline not in MODEL_PIPELINES:
                 continue
             candidate = to_candidate({**model, **details, "pipeline_tag": pipeline}, params_b)
             found[candidate["model_id"]] = candidate

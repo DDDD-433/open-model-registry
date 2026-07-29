@@ -16,6 +16,8 @@ jobs:
         run: make validate
       - name: Validate deployment variants
         run: make validate-variants
+      - name: Validate edge exceptions
+        run: make validate-edge
       - name: Run tests
         run: make test
       - name: Regenerate README
