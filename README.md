@@ -133,14 +133,23 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `Qwen/Qwen2.5-Omni-7B` | audio | 10.73B | `qwen-research` | D | text, image, audio, video |
 | `google/gemma-4-12B` | audio | 11.96B | `apache-2.0` | B | text, image, audio |
 | `google/gemma-4-12B-it` | audio | 11.96B | `apache-2.0` | B | text, image, audio |
+| `fdtn-ai/antares-350m` | coding | 0.35B | `apache-2.0` | B | text, code |
 | `Qwen/Qwen2.5-Coder-0.5B-Instruct` | coding | 0.49B | `apache-2.0` | B | text |
+| `fdtn-ai/antares-1b` | coding | 1B | `apache-2.0` | B | text, code |
 | `Qwen/Qwen2.5-Coder-1.5B-Instruct` | coding | 1.54B | `apache-2.0` | B | text |
 | `bigcode/starcoder2-3b` | coding | 3.03B | `bigcode-openrail-m` | C | text |
 | `Qwen/Qwen2.5-Coder-3B-Instruct` | coding | 3.09B | `qwen-research` | D | text |
 | `bigcode/starcoder2-7b` | coding | 7.17B | `bigcode-openrail-m` | C | text |
 | `Qwen/Qwen2.5-Coder-7B-Instruct` | coding | 7.62B | `apache-2.0` | B | text |
+| `LiquidAI/LFM2.5-ColBERT-350M` | embedding | 0.35B | `lfm1.0` | C | text |
+| `LiquidAI/LFM2.5-Embedding-350M` | embedding | 0.35B | `lfm1.0` | C | text |
 | `HuggingFaceTB/SmolLM-135M` | llm | 0.13B | `apache-2.0` | A | text |
 | `HuggingFaceTB/SmolLM2-135M` | llm | 0.13B | `apache-2.0` | A | text |
+| `LiquidAI/LFM2.5-230M` | llm | 0.23B | `lfm1.0` | C | text |
+| `LiquidAI/LFM2.5-230M-Base` | llm | 0.23B | `lfm1.0` | C | text |
+| `MultiverseComputingCAI/LittleLamb` | llm | 0.29B | `apache-2.0` | B | text |
+| `LiquidAI/LFM2.5-350M` | llm | 0.35B | `lfm1.0` | C | text |
+| `LiquidAI/LFM2.5-350M-Base` | llm | 0.35B | `lfm1.0` | C | text |
 | `HuggingFaceTB/SmolLM-360M` | llm | 0.36B | `apache-2.0` | A | text |
 | `HuggingFaceTB/SmolLM2-360M` | llm | 0.36B | `apache-2.0` | A | text |
 | `openbmb/MiniCPM4-0.5B` | llm | 0.43B | `apache-2.0` | B | text |
@@ -150,6 +159,8 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `openbmb/MiniCPM5-1B-Base` | llm | 1.081B | `apache-2.0` | B | text |
 | `TinyLlama/TinyLlama-1.1B-Chat-v1.0` | llm | 1.1B | `apache-2.0` | A | text |
 | `LiquidAI/LFM2.5-1.2B-Instruct` | llm | 1.17B | `liquid-ai-open` | C | text |
+| `LiquidAI/LFM2.5-1.2B-Base` | llm | 1.2B | `lfm1.0` | C | text |
+| `LiquidAI/LFM2.5-1.2B-Thinking` | llm | 1.2B | `lfm1.0` | C | text |
 | `ibm-granite/granite-4.0-1b` | llm | 1.63B | `apache-2.0` | B | text |
 | `HuggingFaceTB/SmolLM-1.7B` | llm | 1.71B | `apache-2.0` | A | text |
 | `HuggingFaceTB/SmolLM2-1.7B` | llm | 1.71B | `apache-2.0` | A | text |
@@ -158,7 +169,10 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `Qwen/Qwen3-1.7B` | llm | 2.03B | `apache-2.0` | B | text |
 | `ibm-granite/granite-3.3-2b-instruct` | llm | 2.53B | `apache-2.0` | B | text |
 | `google/gemma-2-2b-it` | llm | 2.61B | `gemma-terms-of-use` | C | text |
+| `LiquidAI/LFM2.5-2.6B` | llm | 2.69B | `lfm1.0` | C | text |
+| `LiquidAI/LFM2.5-2.6B-Base` | llm | 2.69B | `lfm1.0` | C | text |
 | `state-spaces/mamba-2.8b` | llm | 2.77B | `apache-2.0` | B | text |
+| `ai21labs/AI21-Jamba2-3B` | llm | 3B | `apache-2.0` | B | text |
 | `HuggingFaceTB/SmolLM3-3B` | llm | 3.08B | `apache-2.0` | B | text |
 | `HuggingFaceTB/SmolLM3-3B-Base` | llm | 3.08B | `apache-2.0` | B | text |
 | `meta-llama/Llama-3.2-3B-Instruct` | llm | 3.21B | `llama3.2` | C | text |
@@ -193,6 +207,8 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `tiiuae/Falcon3-7B-Instruct` | llm | 7.46B | `falcon-llm-license` | C | text |
 | `Qwen/Qwen2.5-7B-Instruct` | llm | 7.61B | `apache-2.0` | B | text |
 | `deepseek-ai/DeepSeek-R1-Distill-Qwen-7B` | llm | 7.62B | `mit` | B | text |
+| `LiquidAI/LFM2.5-8B-A1B` | llm | 8B | `lfm1.0` | C | text |
+| `LiquidAI/LFM2.5-8B-A1B-Base` | llm | 8B | `lfm1.0` | C | text |
 | `CohereForAI/c4ai-command-r7b-12-2024` | llm | 8.03B | `cc-by-nc-4.0` | D | text |
 | `CohereLabs/aya-expanse-8b` | llm | 8.03B | `cc-by-nc-4.0` | D | text |
 | `deepseek-ai/DeepSeek-R1-Distill-Llama-8B` | llm | 8.03B | `mit` | B | text |
@@ -207,6 +223,7 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `google/gemma-2-9b-it` | llm | 9.24B | `gemma-terms-of-use` | C | text |
 | `zai-org/GLM-4-9B-0414` | llm | 9.4B | `mit` | B | text |
 | `zai-org/GLM-Z1-9B-0414` | llm | 9.4B | `mit` | B | text |
+| `domyn/Domyn-Small-v1.0` | llm | 10B | `mit` | B | text |
 | `tiiuae/Falcon3-10B-Instruct` | llm | 10.31B | `falcon-llm-license` | C | text |
 | `ai-sage/GigaChat3-10B-A1.8B-base` | llm | 11.48B | `mit` | B | text |
 | `ai-sage/GigaChat3.1-10B-A1.8B` | llm | 11.48B | `mit` | B | text |
@@ -230,6 +247,7 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `OpenGVLab/InternVL3_5-1B` | vlm | 1.06B | `apache-2.0` | B | text, image |
 | `openbmb/MiniCPM-V-4.6` | vlm | 1.3B | `apache-2.0` | B | text, image, video |
 | `openbmb/MiniCPM-V-4.6-Thinking` | vlm | 1.3B | `apache-2.0` | B | text, image, video |
+| `LiquidAI/LFM2.5-VL-1.6B` | vlm | 1.6B | `lfm1.0` | C | text, image |
 | `microsoft/kosmos-2-patch14-224` | vlm | 1.66B | `mit` | B | text, image |
 | `vikhyatk/moondream2` | vlm | 1.93B | `apache-2.0` | B | text, image |
 | `OpenGVLab/InternVL3-2B` | vlm | 2.09B | `apache-2.0` | B | text, image |
