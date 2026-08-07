@@ -126,8 +126,11 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `Qwen/Qwen2.5-Omni-3B` | audio | 5.54B | `qwen-research` | D | text, image, audio, video |
 | `google/gemma-3n-E4B` | audio | 7.85B | `gemma-terms-of-use` | C | text, image, audio, video |
 | `google/gemma-3n-E4B-it` | audio | 7.85B | `gemma-terms-of-use` | C | text, image, audio, video |
+| `OpenMOSS-Team/MOSS-TTS-v1.5` | audio | 8.49B | `apache-2.0` | B | text, audio |
 | `microsoft/VibeVoice-ASR` | audio | 8.67B | `mit` | B | audio |
 | `openbmb/MiniCPM-o-2_6` | audio | 8.67B | `apache-2.0` | B | text, image, audio, video |
+| `OpenMOSS-Team/MOSS-Music-8B-Instruct` | audio | 9.05B | `apache-2.0` | B | text, audio |
+| `OpenMOSS-Team/MOSS-Music-8B-Thinking` | audio | 9.05B | `apache-2.0` | B | text, audio |
 | `openbmb/MiniCPM-o-4_5` | audio | 9.372B | `apache-2.0` | B | text, image, audio, video |
 | `ai-sage/GigaChat3.1-Audio-10B-A1.8B` | audio | 10B | `mit` | B | text, audio |
 | `Qwen/Qwen2.5-Omni-7B` | audio | 10.73B | `qwen-research` | D | text, image, audio, video |
@@ -141,8 +144,12 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `Qwen/Qwen2.5-Coder-3B-Instruct` | coding | 3.09B | `qwen-research` | D | text |
 | `bigcode/starcoder2-7b` | coding | 7.17B | `bigcode-openrail-m` | C | text |
 | `Qwen/Qwen2.5-Coder-7B-Instruct` | coding | 7.62B | `apache-2.0` | B | text |
+| `LiquidAI/LFM2.5-Encoder-230M` | embedding | 0.23B | `lfm1.0` | C | text |
+| `microsoft/bitnet-embedding-270m` | embedding | 0.27B | `mit` | B | text |
 | `LiquidAI/LFM2.5-ColBERT-350M` | embedding | 0.35B | `lfm1.0` | C | text |
 | `LiquidAI/LFM2.5-Embedding-350M` | embedding | 0.35B | `lfm1.0` | C | text |
+| `LiquidAI/LFM2.5-Encoder-350M` | embedding | 0.35B | `lfm1.0` | C | text |
+| `microsoft/bitnet-embedding-0.6b` | embedding | 0.6B | `mit` | B | text |
 | `HuggingFaceTB/SmolLM-135M` | llm | 0.13B | `apache-2.0` | A | text |
 | `HuggingFaceTB/SmolLM2-135M` | llm | 0.13B | `apache-2.0` | A | text |
 | `LiquidAI/LFM2.5-230M` | llm | 0.23B | `lfm1.0` | C | text |
@@ -192,6 +199,7 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `openbmb/AgentCPM-Explore` | llm | 4.022B | `apache-2.0` | B | text |
 | `Nanbeige/Nanbeige4.2-3B` | llm | 4.17B | `apache-2.0` | B | text |
 | `Nanbeige/Nanbeige4.2-3B-Base` | llm | 4.17B | `apache-2.0` | B | text |
+| `OpenMOSS-Team/SciJudge-4B-2605` | llm | 4.41B | `apache-2.0` | B | text |
 | `InternScience/Agents-A1-4B` | llm | 4.54B | `apache-2.0` | B | text |
 | `FINAL-Bench/Aether-6B-11Attn-base` | llm | 5.79B | `apache-2.0` | B | text |
 | `01-ai/Yi-1.5-6B-Chat` | llm | 6.06B | `apache-2.0` | B | text |
@@ -238,6 +246,7 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `rednote-hilab/dots.ocr` | ocr-vision | 3.04B | `mit` | B | image, text |
 | `deepseek-ai/DeepSeek-OCR` | ocr-vision | 3.34B | `mit` | B | image, text |
 | `Nanbeige/CoSineVerifier-Tool-4B` | other | 4.41B | `mit` | B | text |
+| `inclusionAI/SingGuard-NSFA-4B` | other | 5.17B | `apache-2.0` | B | text, image |
 | `tencent/Hy-Embodied-RxBrain-1.0` | other | 6.21B | `apache-2.0` | B | text, image, video |
 | `HuggingFaceTB/SmolVLM-256M-Instruct` | vlm | 0.26B | `apache-2.0` | B | text, image, video |
 | `LiquidAI/LFM2.5-VL-450M` | vlm | 0.449B | `liquid-ai-open` | C | text, image |
@@ -266,8 +275,10 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `google/gemma-3-4b-it` | vlm | 4.3B | `gemma-terms-of-use` | C | text, image |
 | `Qwen/Qwen3-VL-4B-Instruct` | vlm | 4.44B | `apache-2.0` | B | text, image, video |
 | `microsoft/Fara1.5-4B` | vlm | 4.539B | `mit` | B | text, image |
+| `inclusionAI/VISTA-4B` | vlm | 4.54B | `apache-2.0` | B | text, image |
 | `Qwen/Qwen3.5-4B` | vlm | 4.66B | `apache-2.0` | B | text, image, video |
 | `OpenGVLab/InternVL3_5-4B` | vlm | 4.73B | `apache-2.0` | B | text, image |
+| `microsoft/Mage-VL` | vlm | 4.74B | `apache-2.0` | B | text, image, video |
 | `google/gemma-4-E2B` | vlm | 5.12B | `apache-2.0` | B | text, image, audio |
 | `microsoft/Phi-4-multimodal-instruct` | vlm | 5.57B | `mit` | B | text, image, audio |
 | `OpenGVLab/InternVL3-8B` | vlm | 7.94B | `apache-2.0` | B | text, image |
@@ -285,9 +296,12 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `mistralai/Ministral-3-8B-Base-2512` | vlm | 8.92B | `apache-2.0` | B | text, image |
 | `mistralai/Ministral-3-8B-Instruct-2512-BF16` | vlm | 8.92B | `apache-2.0` | B | text, image |
 | `mistralai/Ministral-3-8B-Reasoning-2512` | vlm | 8.92B | `apache-2.0` | B | text, image |
+| `inclusionAI/VISTA-9B` | vlm | 9.41B | `apache-2.0` | B | text, image |
 | `microsoft/Fara1.5-9B` | vlm | 9.41B | `mit` | B | text, image |
 | `Qwen/Qwen3.5-9B` | vlm | 9.65B | `apache-2.0` | B | text, image, video |
 | `google/paligemma2-10b-pt-224` | vlm | 9.66B | `gemma-terms-of-use` | C | text, image |
 | `zai-org/GLM-4.1V-9B-Base` | vlm | 10.29B | `mit` | B | text, image |
 | `zai-org/GLM-4.1V-9B-Thinking` | vlm | 10.29B | `mit` | B | text, image |
+| `OpenMOSS-Team/MOSS-VL-Instruct-0708` | vlm | 11.34B | `apache-2.0` | B | text, image, video |
+| `OpenMOSS-Team/MOSS-VL-Realtime` | vlm | 11.34B | `apache-2.0` | B | text, image, video |
 <!-- END GENERATED MODEL TABLE -->
