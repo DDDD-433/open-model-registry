@@ -134,6 +134,7 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `openbmb/MiniCPM-o-4_5` | audio | 9.372B | `apache-2.0` | B | text, image, audio, video |
 | `ai-sage/GigaChat3.1-Audio-10B-A1.8B` | audio | 10B | `mit` | B | text, audio |
 | `Qwen/Qwen2.5-Omni-7B` | audio | 10.73B | `qwen-research` | D | text, image, audio, video |
+| `nvidia/NVIDIA-NemotronLabs-VoiceChat-11B` | audio | 11.095B | `openmdw-1.1` | C | text, audio |
 | `google/gemma-4-12B` | audio | 11.96B | `apache-2.0` | B | text, image, audio |
 | `google/gemma-4-12B-it` | audio | 11.96B | `apache-2.0` | B | text, image, audio |
 | `fdtn-ai/antares-350m` | coding | 0.35B | `apache-2.0` | B | text, code |
@@ -150,6 +151,8 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `LiquidAI/LFM2.5-Embedding-350M` | embedding | 0.35B | `lfm1.0` | C | text |
 | `LiquidAI/LFM2.5-Encoder-350M` | embedding | 0.35B | `lfm1.0` | C | text |
 | `microsoft/bitnet-embedding-0.6b` | embedding | 0.6B | `mit` | B | text |
+| `nvidia/Nemotron-3-Embed-1B-BF16` | embedding | 1.141B | `openmdw-1.1` | C | text |
+| `nvidia/Nemotron-3-Embed-8B-BF16` | embedding | 7.953B | `openmdw-1.1` | C | text |
 | `HuggingFaceTB/SmolLM-135M` | llm | 0.13B | `apache-2.0` | A | text |
 | `HuggingFaceTB/SmolLM2-135M` | llm | 0.13B | `apache-2.0` | A | text |
 | `LiquidAI/LFM2.5-230M` | llm | 0.23B | `lfm1.0` | C | text |
@@ -215,6 +218,7 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `tiiuae/Falcon3-7B-Instruct` | llm | 7.46B | `falcon-llm-license` | C | text |
 | `Qwen/Qwen2.5-7B-Instruct` | llm | 7.61B | `apache-2.0` | B | text |
 | `deepseek-ai/DeepSeek-R1-Distill-Qwen-7B` | llm | 7.62B | `mit` | B | text |
+| `inclusionAI/Ling-3.0-tiny` | llm | 7.893B | `mit` | B | text |
 | `LiquidAI/LFM2.5-8B-A1B` | llm | 8B | `lfm1.0` | C | text |
 | `LiquidAI/LFM2.5-8B-A1B-Base` | llm | 8B | `lfm1.0` | C | text |
 | `CohereForAI/c4ai-command-r7b-12-2024` | llm | 8.03B | `cc-by-nc-4.0` | D | text |
@@ -239,12 +243,14 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `microsoft/Florence-2-base` | ocr-vision | 0.23B | `mit` | B | image, text |
 | `stepfun-ai/GOT-OCR2_0` | ocr-vision | 0.72B | `apache-2.0` | B | image, text |
 | `ATH-MaaS/OvisOCR2` | ocr-vision | 0.85B | `apache-2.0` | B | image, text |
+| `nvidia/NVIDIA-Nemotron-Parse-2.0` | ocr-vision | 0.903B | `nvidia-open-model-license` | C | image, text |
 | `PaddlePaddle/PaddleOCR-VL` | ocr-vision | 0.96B | `apache-2.0` | B | image, text |
 | `PaddlePaddle/PaddleOCR-VL-1.5` | ocr-vision | 0.96B | `apache-2.0` | B | image, text |
 | `PaddlePaddle/PaddleOCR-VL-1.6` | ocr-vision | 0.96B | `apache-2.0` | B | image, text |
 | `tencent/HunyuanOCR` | ocr-vision | 1.12B | `tencent-hunyuan-community` | C | image, text |
 | `rednote-hilab/dots.ocr` | ocr-vision | 3.04B | `mit` | B | image, text |
 | `deepseek-ai/DeepSeek-OCR` | ocr-vision | 3.34B | `mit` | B | image, text |
+| `mistralai/Shieldstral-1.0-3B` | other | 3.849B | `apache-2.0` | B | text, image |
 | `Nanbeige/CoSineVerifier-Tool-4B` | other | 4.41B | `mit` | B | text |
 | `inclusionAI/SingGuard-NSFA-4B` | other | 5.17B | `apache-2.0` | B | text, image |
 | `tencent/Hy-Embodied-RxBrain-1.0` | other | 6.21B | `apache-2.0` | B | text, image, video |
@@ -265,7 +271,9 @@ These records are intentionally separate: active parameters can reduce compute, 
 | `Qwen/Qwen2-VL-2B-Instruct` | vlm | 2.21B | `apache-2.0` | B | text, image, video |
 | `Qwen/Qwen3.5-2B` | vlm | 2.27B | `apache-2.0` | B | text, image, video |
 | `OpenGVLab/InternVL3_5-2B` | vlm | 2.35B | `apache-2.0` | B | text, image |
+| `CohereLabs/North-Micro-Vision-Instruct` | vlm | 2.485B | `apache-2.0` | B | text, image |
 | `google/paligemma2-3b-pt-224` | vlm | 3.03B | `gemma-terms-of-use` | C | text, image |
+| `LiquidAI/LFM2.5-VL-3B` | vlm | 3.123B | `lfm1.0` | C | text, image |
 | `Qwen/Qwen2.5-VL-3B-Instruct` | vlm | 3.75B | `apache-2.0` | B | text, image, video |
 | `OpenGVLab/InternVL2-4B` | vlm | 4.15B | `mit` | B | text, image |
 | `microsoft/phi-3.5-vision-instruct` | vlm | 4.15B | `mit` | B | text, image |
